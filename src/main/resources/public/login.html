@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <script src="apiclient.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
+        <title>Login</title>
+    </head>
+    <body>
+        <form id="loginForm">
+
+            User Name: <input type="text" name="username" id="username"></input><br></br>
+        
+            Password: <input type="password" name="password" id="password"></input><br></br>
+            
+            <button id="loginButton" onclick="apiclient.login();return false;">Login</button>
+        
+            <button id="logoutButton" onclick="apiclient.logout();return false;">Logout</button>
+        
+        </form>
+    </body>
+</html>

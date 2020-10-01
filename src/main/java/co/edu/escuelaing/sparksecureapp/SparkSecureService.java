@@ -2,24 +2,43 @@ package co.edu.escuelaing.sparksecureapp;
 
 import static spark.Spark.*;
 
+import spark.Request;
+import spark.Response;
+
 /**
  * 
  * Hello world!
  * 
  */
-public class SparkSecureService 
-{
-    public static void main( String[] args )
-    {
-        // keytool -genkeypair -alias ecikeypair -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore ecikeystore.p12 -validity 3650
-        // keytool -export -keystore ecikeystore.p12 -alias ecikeypair -file ecicert.cer
-        // keytool -import -file ./ecicert.cer -alias firstCA -keystore myTrustStore
+public class SparkSecureService {
+
+    private static SparkSecureController secureController;
+
+    public static void main(String[] args) {
+        secureController = new SparkSecureController();
         port(getPort());
-        secure("keystores/ecikeystore.p12", "password",null,null);
-        get("hello", (req,res) -> "Hello Web Services");
+        staticFiles.location("/public");
+        secure("keystores/ecikeystore.p12", "password", null, null);
+
+        post("login", (req, res) -> secureController.login(req, res));
+        post("logout", (req, res) -> secureController.logOut(req, res));
+        get("hello", (req, res) -> "Hello Web Services");
+        before((req, res) -> doBefore(req, res));
+
+    }
+    
+    private static void doBefore(Request req, Response res) {
+        boolean authenticated = req.session().attribute("username") != null;
+        boolean isLogin = req.pathInfo().equals("/login") ;
+        String url = req.url();
+        url = url.replace(req.pathInfo(), "");
+        if (!authenticated && !isLogin){
+            // Spark.halt(401, "You are not welcome here");
+            res.redirect(url + "/login.html");
+        }
     }
 
-    static int getPort() { 
+    static int getPort() {
         if (System.getenv("PORT") != null) { 
             return Integer.parseInt(System.getenv("PORT")); 
         } return 5000; //returns default port if heroku-port isn't set (i.e. on localhost) 
