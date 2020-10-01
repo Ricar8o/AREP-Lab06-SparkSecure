@@ -23,10 +23,17 @@ public class SparkSecureService {
         post("login", (req, res) -> secureController.login(req, res));
         post("logout", (req, res) -> secureController.logOut(req, res));
         get("hello", (req, res) -> "Hello Web Services");
+        get("hello2", (req, res) -> getHelloFromOther(req, res));
+
         before((req, res) -> doBefore(req, res));
 
     }
     
+    private static String getHelloFromOther(Request req, Response res) {
+        String ans = secureController.getFromOther(req, res,"https://localhost:5001/hello");
+        return ans;
+    }
+
     private static void doBefore(Request req, Response res) {
         boolean authenticated = req.session().attribute("username") != null;
         boolean isLogin = req.pathInfo().equals("/login") ;
@@ -37,6 +44,7 @@ public class SparkSecureService {
             res.redirect(url + "/login.html");
         }
     }
+
 
     static int getPort() {
         if (System.getenv("PORT") != null) { 

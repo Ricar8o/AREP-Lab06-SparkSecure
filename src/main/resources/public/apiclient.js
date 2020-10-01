@@ -29,7 +29,10 @@ var apiclient = (function () {
 		        contentType: 'application/json',
 		        data: JSON.stringify(datos),
 		        success: function(data){
-		        	alert("You are now logged in")
+                    if(data == "Success"){
+                        alert("You are now logged in")
+                        document.location.href="/";
+                    }
 		        },
 		        error: function(x){
 		        	console.error("encountered a problem: ", x);
