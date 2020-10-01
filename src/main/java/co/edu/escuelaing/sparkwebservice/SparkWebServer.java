@@ -18,11 +18,16 @@ public class SparkWebServer {
 
         port(getPort());
         secure("keystores/ecikeystoreaws.p12", "hola123", null, null);
-        get("hello", (req, res) -> "Hello Web Services 2");
+        get("hello", (req, res) -> "Hello Web Services ");
         get("randomColor", (req, res) -> getRandomColor(req, res));
 
     }
-
+    /**
+     * Obtener un colo RGB en formato json.
+     * @param req Spark Request
+     * @param res Spark Response
+     * @return El codigo RGB en formato JSON.
+     */
     private static JsonObject getRandomColor(Request req, Response res) {
         Random rand = new Random();
         JsonObject rgb = new JsonObject();
