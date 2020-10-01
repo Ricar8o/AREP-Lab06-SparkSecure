@@ -1,16 +1,32 @@
 package co.edu.escuelaing.sparkwebservice;
 
 import static spark.Spark.*;
+import java.util.Random;
 
+import com.google.gson.JsonObject;
+
+import spark.Request;
+import spark.Response;
 
 public class SparkWebServer {
-    
-    public static void main(String[] args) {
-        
-        port(getPort());
-        secure("keystores/ecikeystore2.p12", "hola123", null, null);
-        get("hello", (req, res) -> "Hello Web Services 2");
 
+    public static void main(String[] args) {
+
+        port(getPort());
+        secure("keystores/ecikeystoreaws.p12", "hola123", null, null);
+        get("hello", (req, res) -> "Hello Web Services 2");
+        get("randomColor", (req, res) -> getRandomColor(req, res));
+
+    }
+
+    private static JsonObject getRandomColor(Request req, Response res) {
+        Random rand = new Random();
+        JsonObject rgb = new JsonObject();
+        rgb.addProperty("R", rand.nextInt(256));
+        rgb.addProperty("G", rand.nextInt(256));
+        rgb.addProperty("B", rand.nextInt(256));
+        res.type("application/json");
+        return rgb;
     }
 
     static int getPort() {

@@ -24,11 +24,18 @@ public class SparkSecureService {
         post("logout", (req, res) -> secureController.logOut(req, res));
         get("hello", (req, res) -> "Hello Web Services");
         get("hello2", (req, res) -> getHelloFromOther(req, res));
+        get("randomColor", (req, res) -> getRandomColorFromOther(req, res));
 
         before((req, res) -> doBefore(req, res));
 
     }
     
+    private static Object getRandomColorFromOther(Request req, Response res) {
+        String ans = secureController.getFromOther(req, res,"https://localhost:5001/randomColor");
+        res.type("application/json");
+        return ans;
+    }
+
     private static String getHelloFromOther(Request req, Response res) {
         String ans = secureController.getFromOther(req, res,"https://localhost:5001/hello");
         return ans;
