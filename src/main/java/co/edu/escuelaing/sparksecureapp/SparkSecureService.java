@@ -18,8 +18,8 @@ public class SparkSecureService {
         secureController = new SparkSecureController();
         port(getPort());
         staticFiles.location("/public");
-        secure("keystores/ecikeystore.p12", "password", null, null);
-
+        // secure("keystores/ecikeystore.p12", "password", null, null);
+        secure("keystores/ecikeystoreaws2.p12", "yesterday", null, null);
         post("login", (req, res) -> secureController.login(req, res));
         post("logout", (req, res) -> secureController.logOut(req, res));
         get("hello", (req, res) -> "Hello Secure Services");
