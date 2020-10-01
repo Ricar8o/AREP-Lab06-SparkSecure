@@ -7,7 +7,11 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-
+/**
+ * @author Ricar8o
+ * @version 1.0
+ *  java -cp target/classes/:target/dependency/* co.edu.escuelaing.sparkwebservice.SparkWebServer
+ */
 public class SparkWebServer {
 
     public static void main(String[] args) {
