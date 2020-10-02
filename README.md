@@ -128,6 +128,19 @@ Esta clase es la clase principal del servicio web básico, este tiene solo dos s
 
         java -cp target/classes/;target/dependency/* co.edu.escuelaing.sparkwebservice.SparkColorWebServer
 
+#### SparkSecureService
+Esta clase es la clase principal del servicio web al que se hace login, este tiene los servicios /hello , /login y /logout además de los servicios consultados del otro servidor.
+
+**JAVA Linux**
+
+        java -cp target/classes/:target/dependency/* co.edu.escuelaing.sparksecureapp.SparkSecureService
+
+
+**JAVA Windows**
+
+        java -cp target/classes/;target/dependency/* co.edu.escuelaing.sparksecureapp.SparkSecureService
+
+
 ### Usuarios
 La clase [SparkSecureController.java](src/main/java/co/edu/escuelaing/sparksecureapp/SparkSecureController.java)
 tiene quemados en un diccionario los usuarios y un hash generado a partir de sus contraseñas.
