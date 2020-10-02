@@ -47,10 +47,9 @@ public class SparkSecureController {
             return "Success";
         }else{
             return "Fail";
-        }
-
-        
+        }  
     }
+
     /**
      * Servicio de logout.
      * @param req Spark Request.
@@ -71,5 +70,24 @@ public class SparkSecureController {
      */
     public String getFromOther(Request req, Response res, String url){
         return secureURLReader.readURL(url);
+    }
+
+    /**
+     * Comprobar usuario y contraseña.
+     * @param req Spark Request.
+     * @param res Spark Response.
+     * @return mensaje si hizo login.
+     */
+    public String login(JsonObject json){
+        String user = json.get("username").getAsString();
+        String password = json.get("password").getAsString();
+        String hashedPassword = Hash.sha1(password);
+
+        if(users.get(user).equals(hashedPassword)){
+            return "Success";
+        }else{
+            return "Fail";
+        }  
+
     }
 }

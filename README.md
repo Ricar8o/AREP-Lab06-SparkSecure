@@ -9,6 +9,9 @@ Los servidores se comunican de manera segura a través de protocolos de segurida
 Al final se encuentra una demostración en video con los servidores ejecutándose en instancias EC2 de AWS (Amazon Web Services).
 
 
+[![CircleCI](https://circleci.com/gh/Ricar8o/AREP-Lab06-SparkSecure.svg?style=svg)](https://app.circleci.com/pipelines/github/Ricar8o/AREP-Lab06-SparkSecure)
+
+
 ## Conceptos
 
 ### SSL
@@ -125,6 +128,7 @@ Al hacer click en cualquiera spark validara si inicio sesión antes de redirigir
 
 ![index](img/login.jpg)
 
+![Color](img/color.jpg)
 
 #### Demostración AWS
 
@@ -140,11 +144,9 @@ Para generar la documentacion con Maven puede ejecutar cualquiera de los siguien
 *        mvn javadoc:javadoc
 *        mvn javadoc:jar
 
-## PDF Diseño
 
-[Arep_Lab_6.PDF](Arep_Lab_6.pdf)
-
-
+## Video
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sNIvPIAoq2M/0.jpg)](https://youtu.be/sNIvPIAoq2M)
 
 ## Autor 
 
