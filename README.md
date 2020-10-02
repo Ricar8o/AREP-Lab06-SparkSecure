@@ -42,6 +42,30 @@ GIT no es completamente necesario pero si es recomendable, también puede descar
 * [CircleCI](https://circleci.com/) - Es una plataforma que ofrece integración continua en el codigo.
 * [Spark Framework](http://sparkjava.com/) - Es un framework web de desarrollo rápido inspirado en el framework Sinatra para Ruby y se basa en la filosofía Java 8 Lambda Expression.
 
+## Diseño
+
+Esquema de comunicación entre los sistemas y el cliente.
+
+![diagrama1.jpg](img/diagrama1.jpg)
+
+Arquitectura SparkSecureApp
+
+SparkSecureService es quien inicia el servidor, fija las rutas del API y lo asegura con las llaves.
+
+SparkSecureController es quien se encarga de manejar el sistema de sesiones.
+
+Hash es una clase que crea un hash a partir de una cadena (puede ser sha1 o md5)
+
+SecureUrlReader es quien hace y retorna peticiones de otros servidores si estos cuentan con un certificado y este esta almacenado en el TrustStore (myTrustStore)
+
+![diagrama2.jpg](img/diagrama2.jpg)
+
+Arquitectura SparkWebService
+
+Como se puede observar es un servicio web bastante basico y esta asegurado con un certificado.
+
+![diagrama3.jpg](img/diagrama3.jpg)
+
 ## Certificados
 
 Antes de compilar recuerde que ambos servidores usan certificados generados a partir de unas llaves, por defecto usan unas llaves creadas para instancias EC2 específicas, también encontrara un certificado llamado "ecikeystore", para las pruebas locales cambie ambos a este.
@@ -146,7 +170,7 @@ Para generar la documentacion con Maven puede ejecutar cualquiera de los siguien
 
 
 ## Video
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sNIvPIAoq2M/0.jpg)](https://youtu.be/sNIvPIAoq2M)
+[![AWSVideo](https://img.youtube.com/vi/sNIvPIAoq2M/0.jpg)](https://youtu.be/sNIvPIAoq2M)
 
 ## Autor 
 
