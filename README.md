@@ -56,7 +56,7 @@ SparkSecureController es quien se encarga de manejar el sistema de sesiones.
 
 Hash es una clase que crea un hash a partir de una cadena (puede ser sha1 o md5)
 
-SecureUrlReader es quien hace y retorna peticiones de otros servidores si estos cuentan con un certificado y este esta almacenado en el TrustStore (myTrustStore)
+SecureUrlReader es quien hace y retorna peticiones de otros servidores si estos cuentan con un certificado y estos coinciden con los que estan almacenados en el TrustStore (myTrustStore). Este usa el protocolo TSL para fijar el contexto de los certificados.
 
 ![diagrama2.jpg](img/diagrama2.jpg)
 
