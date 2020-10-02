@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/ricar/.m2/repository/com/sparkjava/spark-core/2.9.2/spark-core-2.9.2.jar;C:/Users/ricar/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-server/9.4.30.v20200611/jetty-server-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-http/9.4.30.v20200611/jetty-http-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-util/9.4.30.v20200611/jetty-util-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-io/9.4.30.v20200611/jetty-io-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-webapp/9.4.30.v20200611/jetty-webapp-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-xml/9.4.30.v20200611/jetty-xml-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.30.v20200611/jetty-servlet-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-security/9.4.30.v20200611/jetty-security-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/websocket/websocket-server/9.4.30.v20200611/websocket-server-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/websocket/websocket-common/9.4.30.v20200611/websocket-common-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.4.30.v20200611/websocket-client-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/jetty-client/9.4.30.v20200611/jetty-client-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/websocket/websocket-servlet/9.4.30.v20200611/websocket-servlet-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/org/eclipse/jetty/websocket/websocket-api/9.4.30.v20200611/websocket-api-9.4.30.v20200611.jar;C:/Users/ricar/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar;C:/Users/ricar/.m2/repository/org/beryx/awt-color-factory/1.0.2/awt-color-factory-1.0.2.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'8'
+-sourcepath
+'C:/Users/ricar/Documents/Asignaturas/Noveno Semestre/AREP/Lab-05/SparkSecureAPP/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2020. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/ricar/Documents/Asignaturas/Noveno Semestre/AREP/Lab-05/SparkSecureAPP/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'co.edu.escuelaing.sparkSecureAPP 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'co.edu.escuelaing.sparkSecureAPP 1.0-SNAPSHOT API'

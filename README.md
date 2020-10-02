@@ -57,7 +57,7 @@ La clase [SecureURLReader.java](src/main/java/co/edu/escuelaing/sparksecureapp/S
 
 Para hacerlo puede usar los siguientes comandos y usar la herramienta keytool que normalmente se instal junto con java.
 
-Para crear las llaver
+Para crear las llaves
 
         keytool -genkeypair -alias ecikeypair -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore ecikeystore.p12 -validity 3650
 
