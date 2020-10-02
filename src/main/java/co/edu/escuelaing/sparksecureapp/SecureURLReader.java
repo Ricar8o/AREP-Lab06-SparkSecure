@@ -19,8 +19,8 @@ public class SecureURLReader {
     private void loadTrustStore() {
         try {
             // Create a file and a password representation
-            File trustStoreFile = new File("keystores/myTrustStore");
-            char[] trustStorePassword = "123456".toCharArray();
+            File trustStoreFile = new File("keystores/myTrustStore"); // keystore path
+            char[] trustStorePassword = "123456".toCharArray(); // password
 
             // Load the trust store, the default type is "pkcs12", the alternative is "jks"
             KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());

@@ -10,15 +10,16 @@ import spark.Response;
 /**
  * @author Ricar8o
  * @version 1.0
- *  java -cp target/classes/:target/dependency/* co.edu.escuelaing.sparkwebservice.SparkWebServer
+ * Servidor Web basico
  */
-public class SparkWebServer {
+public class SparkColorWebServer {
 
     public static void main(String[] args) {
 
         port(getPort());
-        secure("keystores/ecikeystoreaws.p12", "hola123", null, null);
-        get("hello", (req, res) -> "Hello Web Services ");
+        // secure("keystores/ecikeystore.p12", "password", null, null);
+        secure("keystores/ecikeystoreaws2.p12", "hola123", null, null);
+        get("hello", (req, res) -> "Hello Color Web Services ");
         get("randomColor", (req, res) -> getRandomColor(req, res));
 
     }

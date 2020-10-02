@@ -26,7 +26,7 @@ public class SparkSecureController {
         secureURLReader = new SecureURLReader();
         users = new HashMap<>();
         users.put("andres", "20eabe5d64b0e216796e834f52d61fd0b70332fc"); // 1234567
-        users.put("usuarioTest", "3c776dacfd82b327a679bdf2339cc9477299ebb6"); // 9876543
+        users.put("testUser", "3c776dacfd82b327a679bdf2339cc9477299ebb6"); // 9876543
 
     }
     /**

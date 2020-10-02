@@ -6,9 +6,9 @@ import spark.Request;
 import spark.Response;
 
 /**
- * 
- * Hello world!
- * 
+ * @author Ricar8o
+ * @version 1.0
+ * Servidor Web seguro
  */
 public class SparkSecureService {
 
@@ -19,7 +19,7 @@ public class SparkSecureService {
         port(getPort());
         staticFiles.location("/public");
         // secure("keystores/ecikeystore.p12", "password", null, null);
-        secure("keystores/ecikeystoreaws2.p12", "yesterday", null, null);
+        secure("keystores/ecikeystoreaws.p12", "yesterday", null, null);
         post("login", (req, res) -> secureController.login(req, res));
         post("logout", (req, res) -> secureController.logOut(req, res));
         get("hello", (req, res) -> "Hello Secure Services");
@@ -27,7 +27,7 @@ public class SparkSecureService {
         get("randomColor", (req, res) -> getRandomColorFromOther(req, res));
 
         before((req, res) -> doBefore(req, res));
-
+        
     }
     /**
      *  Obtiene un color RGB desde otro servicio.
@@ -36,7 +36,10 @@ public class SparkSecureService {
      * @return Color RGB en formato JSON
      */
     private static String getRandomColorFromOther(Request req, Response res) {
-        String ans = secureController.getFromOther(req, res,"https://ec2-52-91-59-106.compute-1.amazonaws.com:5001/randomColor");
+        // Consulta aws
+        String ans = secureController.getFromOther(req, res,"https://ec2-54-83-125-143.compute-1.amazonaws.com:5001/randomColor");
+        // Consulta local
+        // String ans = secureController.getFromOther(req,res,"https://localhost:5001/randomColor");
         res.type("application/json");
         return ans;
     }
@@ -48,7 +51,10 @@ public class SparkSecureService {
      * @return Un saludo desde otro servicio web.
      */
     private static String getHelloFromOther(Request req, Response res) {
-        String ans = secureController.getFromOther(req, res,"https://ec2-52-91-59-106.compute-1.amazonaws.com:5001/hello");
+        // Consulta AWS
+        String ans = secureController.getFromOther(req, res,"https://ec2-54-83-125-143.compute-1.amazonaws.com:5001/hello");
+        // Consulta local
+        // String ans = secureController.getFromOther(req, res, "https://localhost:5001/hello");
         return ans;
     }
 
